@@ -35,6 +35,18 @@
    <script src="sketch.js"></script>
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
    <style type="text/css">
+   #header {
+
+				width: 100%;
+				padding: 10px;
+				font-family: 'Exo 2', sans-serif;
+				font-style: italic;
+        font-size: 30px;
+				text-align: center;
+        background: rgb(225,174,238);
+     background: radial-gradient(circle, rgba(225,174,238,1) 0%, rgba(104,165,238,1) 100%);
+
+			}
    #overlay {
    position: fixed;
    top: 0;
@@ -65,7 +77,8 @@
    width: 600px;
    min-height: 150px;
    margin: 100px auto;
-   background: #f3f3f3;
+   background: rgb(225,174,238);
+background: radial-gradient(circle, rgba(225,174,238,1) 0%, rgba(104,165,238,1) 100%);
    /*opacity: 0.5;*/
    position: relative;
    z-index: 103;
@@ -78,7 +91,7 @@
    clear: both;
        color: #555555;
        text-align: justify;
-       font-size: 20px;
+       font-size: 25px;
          font-family: 'Exo 2', sans-serif;
    }
    .cnt223 p a{
@@ -99,6 +112,8 @@
    cursor: pointer;
    }
    </style>
+   <div id="header">
+			<strong>Check Please</strong><span style="margin-left:40px;"><strong>Click boxes</strong> </span><span style="margin-left:40px;"><strong>By Ben Glass</strong></span>
    <script src="/js/Averigua.js"></script>
    <script src="/js/rainbow-text.js"></script>
    <script src="/js/fancy-chars.js"></script>
@@ -150,4 +165,3 @@
       </script>
     </body>
   </html>
-
