@@ -4,15 +4,17 @@
  <head>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
- 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,200&display=swap" rel="stylesheet">
 
   <meta charset="utf-8">
    <title>check please</title>
    <style>
-
+   @font-face{
+     font-family: "Major Mono Display";
+     src: url("MajorMonoDisplay-Regular.ttf")
+   }
          .cntr-block {
            text-align: center;
          }
@@ -35,16 +37,16 @@
   </style>
  <body>
    <script src="sketch.js"></script>
-	<script src="text.js"></script>
+   <script src="text.js"></script>
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
    <style type="text/css">
    #header {
 
 				width: 100%;
-				padding: 10px;
-				font-family: 'Exo 2', sans-serif;
+				padding: 18px;
+				font-family: 'Major Mono Display', sans-serif;
 				font-style: italic;
-        font-size: 20px;
+        font-size: 15px;
 				text-align: center;
         background: rgb(225,174,238);
      background: radial-gradient(circle, rgba(225,174,238,1) 0%, rgba(104,165,238,1) 100%);
@@ -65,19 +67,20 @@
    display: none;
    }
    .cnt223 a{
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Major Mono Display', sans-serif;
    }
    .popup{
+
    width: 100%;
    margin: 0 auto;
    display: none;
    position: fixed;
    z-index: 101;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Major Mono Display', sans-serif;
    }
    .cnt223{
-    border-style: outset;
-    border-width: 10px;
+     border-style: outset;
+     border-width: 10px;
    min-width: 600px;
    width: 600px;
    min-height: 150px;
@@ -90,17 +93,17 @@ background: radial-gradient(circle, rgba(225,174,238,1) 0%, rgba(104,165,238,1) 
    padding: 15px 35px;
    border-radius: 5px;
    box-shadow: 0 2px 5px #000;
-     font-family: 'Exo 2', sans-serif;
+     font-family: 'Major Mono Display', sans-serif;
    }
    .cnt223 p{
    clear: both;
        color: #555555;
        text-align: justify;
        font-size: 25px;
-         font-family: 'Exo 2', sans-serif;
+         font-family: 'Major Mono Display', sans-serif;
    }
    .cnt223 p a{
-       font-family: 'Exo 2', sans-serif;
+       font-family: 'Major Mono Display', sans-serif;
    color: #4974eb;
    font-weight: bold;
    }
@@ -111,7 +114,7 @@ background: radial-gradient(circle, rgba(225,174,238,1) 0%, rgba(104,165,238,1) 
    position: relative;
    top: -25px;
    width: 34px;
-     font-family: 'Exo 2', sans-serif;
+     font-family: 'Major Mono Display', sans-serif;
    }
    .cnt223 .x:hover{
    cursor: pointer;
@@ -119,12 +122,8 @@ background: radial-gradient(circle, rgba(225,174,238,1) 0%, rgba(104,165,238,1) 
    </style>
    <div id="header">
 			<strong>Check Please</strong><span style="margin-left:40px;"><strong>Click boxes</strong> </span><span style="margin-left:40px;"><strong>By Ben Glass</strong></span>
+  
 
-   <script>
-   FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
-
-
-   </script>
    <script type='text/javascript'>
    $(function(){
    var overlay = $('<div id="overlay"></div>');
@@ -165,6 +164,7 @@ background: radial-gradient(circle, rgba(225,174,238,1) 0%, rgba(104,165,238,1) 
  }
  //const cb = document.querySelector('#accept');
  //console.log(cb.checked);
+
       </script>
     </body>
   </html>
