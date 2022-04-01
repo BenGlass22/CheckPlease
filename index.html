@@ -1,170 +1,234 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <link rel="shortcut icon" type="image/png" href="favicon.png">
- <head>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+<head>
+  <script src="fancy-chars.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,200&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,300&family=Exo+2:ital,wght@1,200&family=Major+Mono+Display&display=swap" rel="stylesheet">
   <meta charset="utf-8">
-   <title>check please</title>
-   <style>
-   @font-face{
-     font-family: "Major Mono Display";
-     src: url("MajorMonoDisplay-Regular.ttf")
-   }
-         .cntr-block {
-           text-align: center;
-         }
-         .cntr-block a {
-           font-size: 24px;
-           display: block;
-           margin-bottom: 10px;
-         }
+  <title>check please</title>
+  <style type="text/css">
+    }
 
-         .cntr-block a:hover {
-           border-bottom: none;
-         }
+    .cntr-block {
+      text-align: center;
+    }
 
-       body{
-         margin: 0;
-         padding: 0;
-         min-height: 100vh;
-       }
+    .cntr-block a {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .cntr-block a:hover {
+      border-bottom: none;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: #D3D3D3;
+    }
+
+    #header {
+
+      width: 100%;
+      padding: 8px;
+      font-family: 'Chakra Petch', sans-serif;
+      font-style: italic;
+      font-size: 15px;
+      text-align: center;
+      background: rgb(131,58,180);
+      background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(69,223,252,1) 100%);
+      border-style: outset;
+      border-width: 10px;
+      cursor: wait;
+
+
+
+
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      filter: alpha(opacity=70);
+      -moz-opacity: 0.7;
+      -khtml-opacity: 0.7;
+      opacity: 0.7;
+      z-index: 100;
+      display: none;
+    }
+
+    .cnt223 a {
+      font-family: 'Chakra Petch', sans-serif;
+    }
+
+    .popup {
+
+      width: 100%;
+      margin: 0 auto;
+      display: none;
+      position: fixed;
+      z-index: 101;
+      font-family: 'Chakra Petch', sans-serif;
+    }
+
+    .cnt223 {
+      border-style: outset;
+      border-width: 10px;
+      min-width: 600px;
+      width: 600px;
+      min-height: 150px;
+      margin: 100px auto;
+      background: #D3D3D3;
+
+      /*opacity: 0.5;*/
+      position: relative;
+      z-index: 103;
+      padding: 15px 35px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px #000;
+      font-family: 'Chakra Petch', sans-serif;
+    }
+
+    .cnt223 p {
+      clear: both;
+      color: #555555;
+      text-align: justify;
+      font-size: 25px;
+      font-family: 'Chakra Petch', sans-serif;
+    }
+
+    .cnt223 p a {
+      font-family: 'Chakra Petch', sans-serif;
+      color: #4974eb;
+      font-weight: bold;
+    }
+
+    .cnt223 .x {
+      float: right;
+      height: 35px;
+      left: 22px;
+      position: relative;
+      top: -25px;
+      width: 34px;
+      font-family: 'Chakra Petch', sans-serif;
+    }
+
+    .cnt223 .x:hover {
+      cursor: pointer;
+    }
+
+    .checkbox_grid {
+      display: block;
+      width: 1500px;
+      height: 25500px;
+      align: center;
+      vertical-align: center;
+    }
 
   </style>
- <body>
-   <script src="sketch.js"></script>
-   <script src="text.js"></script>
-   <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
-   <style type="text/css">
-   #header {
 
-				width: 100%;
-				padding: 18px;
-				font-family: 'Major Mono Display', sans-serif;
-				font-style: italic;
-        font-size: 15px;
-				text-align: center;
-        background: rgb(225,174,238);
-     background: radial-gradient(circle, rgba(225,174,238,1) 0%, rgba(104,165,238,1) 100%);
-
-			}
-   #overlay {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: #000;
-   filter:alpha(opacity=70);
-   -moz-opacity:0.7;
-   -khtml-opacity: 0.7;
-   opacity: 0.7;
-   z-index: 100;
-   display: none;
-   }
-   .cnt223 a{
-  font-family: 'Major Mono Display', sans-serif;
-   }
-   .popup{
-
-   width: 100%;
-   margin: 0 auto;
-   display: none;
-   position: fixed;
-   z-index: 101;
-    font-family: 'Major Mono Display', sans-serif;
-   }
-   .cnt223{
-     border-style: outset;
-     border-width: 10px;
-   min-width: 600px;
-   width: 600px;
-   min-height: 150px;
-   margin: 100px auto;
-   background: rgb(225,174,238);
-background: radial-gradient(circle, rgba(225,174,238,1) 0%, rgba(104,165,238,1) 100%);
-   /*opacity: 0.5;*/
-   position: relative;
-   z-index: 103;
-   padding: 15px 35px;
-   border-radius: 5px;
-   box-shadow: 0 2px 5px #000;
-     font-family: 'Major Mono Display', sans-serif;
-   }
-   .cnt223 p{
-   clear: both;
-       color: #555555;
-       text-align: justify;
-       font-size: 25px;
-         font-family: 'Major Mono Display', sans-serif;
-   }
-   .cnt223 p a{
-       font-family: 'Major Mono Display', sans-serif;
-   color: #4974eb;
-   font-weight: bold;
-   }
-   .cnt223 .x{
-   float: right;
-   height: 35px;
-   left: 22px;
-   position: relative;
-   top: -25px;
-   width: 34px;
-     font-family: 'Major Mono Display', sans-serif;
-   }
-   .cnt223 .x:hover{
-   cursor: pointer;
-   }
-   </style>
-   <div id="header">
-			<strong>Check Please</strong><span style="margin-left:40px;"><strong>Click boxes</strong> </span><span style="margin-left:40px;"><strong>By Ben Glass</strong></span>
-  
-
-   <script type='text/javascript'>
-   $(function(){
-   var overlay = $('<div id="overlay"></div>');
-   overlay.show();
-   overlay.appendTo(document.body);
-   $('.popup').show();
-   $('.close').click(function(){
-   $('.popup').hide();
-   overlay.appendTo(document.body).remove();
-   return false;
-   });
+<body class="checkbox_grid">
+  <script src="text.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
 
 
-   $('.x').click(function(){
-   $('.popup').hide();
-   overlay.appendTo(document.body).remove();
-   return false;
-   });
-   });
-   </script>
-   <div align="center" class='popup'>
-   <header align="center" class='cnt223'>
-   <h1 class="control-block" >Welcome to CheckPlease</h1>
-   <p>
-     Join Us Today in Resisting the MetaVerse. For optimal viewing use full screen mode.
-   <br/>
-   <br/>
-   <a href='' align="center" class='close'>Begin</a>
-   </p>
-   </div>
-   </div>
+  <div id="header">
+    <div>
+      <progress></progress>
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <progress></progress>
+    </div>
+    <button type="button">Check Please</button>
+    <span style="margin-left:40px;">
+      <button type="button">Collaberate and Check Boxes</button>
+    </span>
+    <span style="margin-left:40px;">
+      <button type="button">By Ben Glass</button>
+    </span>
+    <div>
+    <progress></progress>
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <img src="beachball.gif" alt="spinning mac beachball">
+      <progress></progress>
+    </div>
 
- <script>
- for (let i = 0; i < 100000; i++){
-   const checkbox = document.createElement('input')
-    checkbox.type = 'checkbox'
-    document.body.appendChild(checkbox)
- }
- //const cb = document.querySelector('#accept');
- //console.log(cb.checked);
+    <script type='text/javascript'>
+      $(function() {
+        var overlay = $('<div id="overlay"></div>');
+        overlay.show();
+        overlay.appendTo(document.body);
+        $('.popup').show();
+        $('.close').click(function() {
+          $('.popup').hide();
+          overlay.appendTo(document.body).remove();
+          return false;
+        });
 
-      </script>
-    </body>
-  </html>
+        text = window.document.querySelector("#header > div > header > h1")
+        window.FancyText.animate(text, 1000, 0.25)
+
+        $('.x').click(function() {
+          $('.popup').hide();
+          overlay.appendTo(document.body).remove();
+          return false;
+        });
+        paratext = window.document.querySelector("#header > div > header > p")
+        window.FancyText.animate(paratext, 1000, 0.25)
+      });
+    </script>
+    <div align="center" class='popup'>
+      <header align="center" class='cnt223'>
+        <h1 class="control-block">Welcome to CheckPlease</h1>
+        <p>
+          Join Us Today in Redifining the MetaVerse. For optimal viewing use full screen mode.
+          <br />
+          <br />
+        <div>
+        <button type="button" href=''align="center" class='close'>Begin</button>
+        </div>
+        </p>
+    </div>
+  </div>
+
+  <div>
+    <script>
+      for (let i = 0; i < 100050; i++) {
+        const checkbox = document.createElement('input')
+        checkbox.type = 'checkbox'
+        document.body.appendChild(checkbox)
+      }
+      //const cb = document.querySelector('#accept');
+      //console.log(cb.checked);
+    </script>
+  </div>
+
+</body>
+
+</html>
