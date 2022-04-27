@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,300&family=Exo+2:ital,wght@1,200&family=Major+Mono+Display&display=swap" rel="stylesheet">
   <meta charset="utf-8">
-  <title>check please</title>
+  <title>Check Please</title>
   <style type="text/css">
     }
 
@@ -37,7 +37,7 @@
 
     #header {
 
-      width: 100%;
+      width: 97.5%;
       padding: 8px;
       font-family: 'Chakra Petch', sans-serif;
       font-style: italic;
@@ -48,6 +48,7 @@
       border-style: outset;
       border-width: 10px;
       cursor: wait;
+
 
 
 
@@ -136,17 +137,18 @@ background: linear-gradient(297deg, rgba(252,2,2,1) 0%, rgba(18,255,0,1) 50%, rg
       height: 25500px;
       align: center;
       vertical-align: center;
+      padding-left: 80px;
     }
 
   </style>
-
+  <div id="header">
+    <div>
 <body class="checkbox_grid">
   <script src="text.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
 
 
-  <div id="header">
-    <div>
+
       <progress></progress>
       <img src="beachball.gif" alt="spinning mac beachball">
       <img src="beachball.gif" alt="spinning mac beachball">
@@ -161,7 +163,7 @@ background: linear-gradient(297deg, rgba(252,2,2,1) 0%, rgba(18,255,0,1) 50%, rg
     </div>
     <button type="button">Check Please</button>
     <span style="margin-left:40px;">
-      <button type="button">Collaberate and Check Boxes</button>
+      <button type="button">Checkbox Cyber Lounge</button>
     </span>
     <span style="margin-left:40px;">
       <button type="button">By Ben Glass</button>
@@ -181,6 +183,7 @@ background: linear-gradient(297deg, rgba(252,2,2,1) 0%, rgba(18,255,0,1) 50%, rg
     </div>
 
     <script type='text/javascript'>
+    // pop up script && fancy FancyText
       $(function() {
         var overlay = $('<div id="overlay"></div>');
         overlay.show();
@@ -219,15 +222,61 @@ background: linear-gradient(297deg, rgba(252,2,2,1) 0%, rgba(18,255,0,1) 50%, rg
   </div>
 
   <div>
+
     <script>
+    //generates checkboxes
       for (let i = 0; i < 100050; i++) {
         const checkbox = document.createElement('input')
         checkbox.type = 'checkbox'
         document.body.appendChild(checkbox)
       }
-      //const cb = document.querySelector('#accept');
-      //console.log(cb.checked);
-    </script>
+
+      // tracks mouse position
+      (function() {
+        var mousePos;
+
+        document.onmousemove = handleMouseMove;
+        setInterval(getMousePosition, 100); // setInterval repeats every X ms
+
+        function handleMouseMove(event) {
+            var dot, eventDoc, doc, body, pageX, pageY;
+
+            event = event || window.event; // IE-ism
+
+            // If pageX/Y aren't available and clientX/Y are,
+            // calculate pageX/Y - logic taken from jQuery.
+            // (This is to support old IE)
+            if (event.pageX == null && event.clientX != null) {
+                eventDoc = (event.target && event.target.ownerDocument) || document;
+                doc = eventDoc.documentElement;
+                body = eventDoc.body;
+
+                event.pageX = event.clientX +
+                  (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+                  (doc && doc.clientLeft || body && body.clientLeft || 0);
+                event.pageY = event.clientY +
+                  (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
+                  (doc && doc.clientTop  || body && body.clientTop  || 0 );
+            }
+
+            mousePos = {
+                x: event.pageX,
+                y: event.pageY
+            };
+        }
+        function getMousePosition() {
+            var pos = mousePos;
+            if (!pos) {
+                // We haven't seen any movement yet
+            }
+            else {
+                // Use pos.x and pos.y
+            }
+        }
+    })();
+
+
+  </script>
   </div>
 
 </body>
