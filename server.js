@@ -1,11 +1,12 @@
-const express = require('express')
+require('dotenv').config();
+const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
 const bodyParser = require('body-parser')
 const io = require('socket.io')(http)
-const port = 8000
+const port = process.env.PORT
 
-app.listen(3000,() => console.log('listening at 3000'));
+//app.listen(3000,() => console.log('listening at 3000'));
 app.use(express.static(`${__dirname}`));
 
 
